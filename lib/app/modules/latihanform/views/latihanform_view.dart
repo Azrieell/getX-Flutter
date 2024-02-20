@@ -68,16 +68,18 @@ class LatihanformView extends StatelessWidget {
                         children: [
                           Obx(() => Radio(
                                 value: 'Laki-laki',
-                                groupValue: latihanController.jenisKelamin.value,
-                                onChanged: (value) =>
-                                    latihanController.jenisKelamin.value = value!,
+                                groupValue:
+                                    latihanController.jenisKelamin.value,
+                                onChanged: (value) => latihanController
+                                    .jenisKelamin.value = value!,
                               )),
                           Text('Laki-laki'),
                           Obx(() => Radio(
                                 value: 'Perempuan',
-                                groupValue: latihanController.jenisKelamin.value,
-                                onChanged: (value) =>
-                                    latihanController.jenisKelamin.value = value!,
+                                groupValue:
+                                    latihanController.jenisKelamin.value,
+                                onChanged: (value) => latihanController
+                                    .jenisKelamin.value = value!,
                               )),
                           Text('Perempuan'),
                         ],
@@ -126,8 +128,7 @@ class LatihanformView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("Expired Date :"),
-                                Obx(() =>
-                                    Text(latihanController.expired.value))
+                                Obx(() => Text(latihanController.expired.value))
                               ],
                             ),
                           )),
@@ -135,23 +136,26 @@ class LatihanformView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Text('Tipe Member :', style: TextStyle(fontSize: 16.0)),
+                          Text('Tipe Member :',
+                              style: TextStyle(fontSize: 16.0)),
                           for (String member
                               in latihanController.getTipeMemberList())
                             Obx(() => CheckboxListTile(
-                                  title: Text(member, style: TextStyle(fontSize: 16.0)),
+                                  title: Text(member,
+                                      style: TextStyle(fontSize: 16.0)),
                                   value:
                                       latihanController.member.contains(member),
-                                  onChanged: (value) =>
-                                      latihanController.toggleMemberList(member),
+                                  onChanged: (value) => latihanController
+                                      .toggleMemberList(member),
                                 )),
                           SizedBox(height: 16.0),
                         ],
                       ),
                       SizedBox(height: 16.0),
-                      Obx(() => Text(
-                        'Pembayaran : ${latihanController.totalpembayaran.value}',
-                        style: TextStyle(fontSize: 16.0),
+                      Obx(
+                        () => Text(
+                          'Pembayaran : ${latihanController.totalpembayaran.value}',
+                          style: TextStyle(fontSize: 16.0),
                         ),
                       ),
                       SizedBox(height: 16.0),

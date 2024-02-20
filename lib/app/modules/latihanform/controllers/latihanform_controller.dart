@@ -23,7 +23,7 @@ class LatihanController extends GetxController {
 
   List<String> getTipeMemberList() => memberList;
 
-  Future<void> selectdate(BuildContext context) async {
+ Future<void> selectdate(BuildContext context) async {
   final DateTime? picked = await showDatePicker(
     context: context,
     firstDate: DateTime(2000),
@@ -31,20 +31,22 @@ class LatihanController extends GetxController {
     lastDate: DateTime.now(),
   );
 
-     if (picked != null) {
+  if (picked != null) {
     final formattedDate = DateFormat('yyyy-MM-dd').format(picked);
     tanggalLahir.value = formattedDate;
+    selectedDate.value = formattedDate; // Perbarui selectedDate
     DateTime now = DateTime.now();
-    DateTime selectedDate = picked;
-    int age = now.year - selectedDate.year;
+    int age = now.year - picked.year;
 
-    if (now.month < selectedDate.month ||
-        (now.month == selectedDate.month && now.day < selectedDate.day)) {
+    if (now.month < picked.month ||
+        (now.month == picked.month && now.day < picked.day)) {
       age--;
     }
     umur.value = '${age}'; // Perubahan nilai menjadi angka umur
   }
 }
+
+
   
 
 void toggleMemberList(String memberValue) {
@@ -95,6 +97,6 @@ void toggleMemberList(String memberValue) {
         // ignore: invalid_use_of_protected_member
         'Data Formulir: ${namaLengkap.value}, ${tempatLahir.value},${selectedDate.value}, ${jenisKelamin.value}, ${email.value}, ${member.value}, Total Pembayaran: ${totalpembayaran.value}');
     isFormSubmitted.value = true;
-    Get.to(latihanformoutput());
+    Get.to(Latihanformoutput());
   }
 }
