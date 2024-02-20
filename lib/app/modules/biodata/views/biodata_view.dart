@@ -81,7 +81,7 @@ class BiodataView extends StatelessWidget {
                     ),
                     SizedBox(height: 16.0),
                     TextFormField(
-                      maxLines: 3,
+                      maxLines: 1,
                       decoration: InputDecoration(labelText: 'Alamat'),
                       onChanged: (value) =>
                           biodataController.alamat.value = value,
@@ -96,7 +96,7 @@ class BiodataView extends StatelessWidget {
                           )),
                     SizedBox(height: 16.0),
                     ElevatedButton(
-                      onPressed: () => biodataController.submitForm(),
+                      onPressed: () => _showAlert(context),
                       child: Text('Submit'),
                     ),
                   ],
@@ -117,6 +117,36 @@ class BiodataView extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+  void _showAlert(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Biodata Anda'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('Nama: ${biodataController.nama.value}'),
+                Text('Tanggal Lahir: ${biodataController.selectedDate.value}'),
+                Text('Agama: ${biodataController.agama.value}'),
+                Text('Jenis Kelamin: ${biodataController.jenisKelamin.value}'),
+                Text('Alamat: ${biodataController.alamat.value}'),
+                Text('Hobi: ${biodataController.hobi}'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
