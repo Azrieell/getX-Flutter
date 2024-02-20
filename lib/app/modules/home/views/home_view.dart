@@ -39,6 +39,12 @@ class HomeView extends GetView<HomeController> {
               },
               child: Text("Pindah Ke Halaman Biodata"),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed('/latihanform');
+              },
+              child: Text("Pindah Ke Halaman Latihan"),
+            ),
           ],
         ),
       ),

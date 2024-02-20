@@ -6,6 +6,8 @@ import '../modules/counter/bindings/counter_binding.dart';
 import '../modules/counter/views/counter_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/latihanform/bindings/latihanform_binding.dart';
+import '../modules/latihanform/views/latihanform_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 
@@ -34,8 +36,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.BIODATA,
-      page: () =>  BiodataView(),
+      page: () => BiodataView(),
       binding: BiodataBinding(),
+    ),
+    GetPage(
+      name: _Paths.LATIHANFORM,
+      page: () => LatihanformView(),
+      binding: LatihanformBinding(),
     ),
   ];
 }

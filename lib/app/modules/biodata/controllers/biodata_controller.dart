@@ -46,37 +46,5 @@ class BiodataController extends GetxController {
     print(
         'Data Formulir: ${nama.value}, ${selectedDate.value}, ${agama.value}, ${jenisKelamin.value}, ${alamat.value}, ${hobi.value}');
     isFormSubmitted.value = true;
-    _showAlert(context);
-  }
-
-  void _showAlert(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Biodata Anda'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text('Nama: ${nama.value}'),
-                Text('Tanggal Lahir: ${selectedDate.value}'),
-                Text('Agama: ${agama.value}'),
-                Text('Jenis Kelamin: ${jenisKelamin.value}'),
-                Text('Alamat: ${alamat.value}'),
-                Text('Hobi: ${hobi}'),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
   }
 }

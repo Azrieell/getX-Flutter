@@ -8,6 +8,7 @@ abstract class Routes {
   static const COUNTER = _Paths.COUNTER;
   static const FORMULIR = _Paths.FORMULIR;
   static const BIODATA = _Paths.BIODATA;
+  static const LATIHANFORM = _Paths.LATIHANFORM;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const COUNTER = '/counter';
   static const FORMULIR = '/formulir';
   static const BIODATA = '/biodata';
+  static const LATIHANFORM = '/latihanform';
 }
