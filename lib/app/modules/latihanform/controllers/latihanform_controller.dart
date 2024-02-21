@@ -95,7 +95,7 @@ void toggleMemberList(String memberValue) {
   void submitForm() {
     print(
         // ignore: invalid_use_of_protected_member
-        'Data Formulir: ${namaLengkap.value}, ${tempatLahir.value},${selectedDate.value}, ${jenisKelamin.value}, ${email.value}, ${member.value}, Total Pembayaran: ${totalpembayaran.value}');
+        'Data Formulir: ${namaLengkap.value}, ${tempatLahir.value},${selectedDate.value}, ${jenisKelamin.value}, ${email.value}, ${member.value}, Total Pembayaran: ${totalpembayaran.value}, ${selectexpired}');
     isFormSubmitted.value = true;
     Get.to(Latihanformoutput());
   }

@@ -9,6 +9,8 @@ abstract class Routes {
   static const FORMULIR = _Paths.FORMULIR;
   static const BIODATA = _Paths.BIODATA;
   static const LATIHANFORM = _Paths.LATIHANFORM;
+  static const LOGIN = _Paths.LOGIN;
+  static const REGISTER = _Paths.REGISTER;
 }
 
 abstract class _Paths {
@@ -19,4 +21,6 @@ abstract class _Paths {
   static const FORMULIR = '/formulir';
   static const BIODATA = '/biodata';
   static const LATIHANFORM = '/latihanform';
+  static const LOGIN = '/login';
+  static const REGISTER = '/register';
 }

@@ -118,20 +118,24 @@ class LatihanformView extends StatelessWidget {
                         height: 15,
                       ),
                       InkWell(
-                          onTap: () => latihanController.selectexpired(context),
-                          child: InputDecorator(
-                            decoration: InputDecoration(
-                              labelText: "Expired Date",
-                              hintText: "Expired Date",
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text("Expired Date :"),
-                                Obx(() => Text(latihanController.expired.value))
-                              ],
-                            ),
-                          )),
+                        onTap: () async {
+                          // Panggil method selectexpired saat form input di-klik
+                          await latihanController.selectexpired(context);
+                        },
+                        child: InputDecorator(
+                          decoration: InputDecoration(
+                            labelText: "Expired Date",
+                            hintText: "Expired Date",
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Expired Date :"),
+                              Obx(() => Text(latihanController.expired.value))
+                            ],
+                          ),
+                        ),
+                      ),
                       SizedBox(height: 16.0),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
