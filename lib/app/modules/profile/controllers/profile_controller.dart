@@ -14,7 +14,7 @@ class ProfileController extends GetxController {
     fetchUserDetails();
   }
 
-Future<void> fetchUserDetails() async {
+  Future<void> fetchUserDetails() async {
     try {
       // Get the token from SharedPreferences
       SharedPreferences localStorage = await SharedPreferences.getInstance();
@@ -36,8 +36,19 @@ Future<void> fetchUserDetails() async {
       );
 
       if (response.statusCode == 200) {
+        // Decode the response JSON
         var apiResponse = json.decode(response.body);
-        user.value = apiResponse;
+
+        // Check if the response contains the required fields
+        if (apiResponse != null &&
+            // apiResponse['uuid'] != null &&
+            apiResponse['username'] != null &&
+            apiResponse['email'] != null ) {
+          // Update the user value
+          user.value = apiResponse;
+        } else {
+          throw Exception('Invalid user data received');
+        }
       } else {
         throw Exception('Failed to load user details');
       }
@@ -47,7 +58,6 @@ Future<void> fetchUserDetails() async {
       isLoading.value = false;
     }
   }
-
 
   Future<void> logout() async {
     try {

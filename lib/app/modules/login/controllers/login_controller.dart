@@ -30,7 +30,7 @@ Future<void> login() async {
       if (responseBody['accessToken'] != null) {
         // login sukses
         _saveUserData(responseBody);
-        Get.offAllNamed('/home');
+        Get.offAllNamed('/bottom-menu');
       } else {
         Get.snackbar('Error', 'Login failed. Invalid response from server.');
       }

@@ -1,5 +1,4 @@
 part of 'app_pages.dart';
-// DO NOT EDIT. This is code generated via package:get_cli/get_cli.dart
 
 abstract class Routes {
   Routes._();
@@ -11,6 +10,8 @@ abstract class Routes {
   static const LATIHANFORM = _Paths.LATIHANFORM;
   static const LOGIN = _Paths.LOGIN;
   static const REGISTER = _Paths.REGISTER;
+  static const CATEGORI = _Paths.CATEGORI;
+  static const BOTTOM_MENU = _Paths.BOTTOM_MENU;
 }
 
 abstract class _Paths {
@@ -23,4 +24,9 @@ abstract class _Paths {
   static const LATIHANFORM = '/latihanform';
   static const LOGIN = '/login';
   static const REGISTER = '/register';
+  static const CATEGORI = '/categori';
+  static const String TAMBAHCATEGORI = '/categori/add';
+  static const String EDITCATEGORI = '/categori/edit';
+  static const String DETAILCATEGORI = '/categori/edit';
+  static const BOTTOM_MENU = '/bottom-menu';
 }
